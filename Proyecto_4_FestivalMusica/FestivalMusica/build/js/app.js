@@ -1,2 +1,114 @@
-function iniciarApp(){navegacionFija(),crerGaleria(),scrollNav()}function navegacionFija(){const e=document.querySelector(".header"),t=document.querySelector(".sobre-festival"),n=document.querySelector("body");window.addEventListener("scroll",(function(){t.getBoundingClientRect().top<0?(e.classList.add("fijo"),n.classList.add("body-scroll")):(e.classList.remove("fijo"),n.classList.remove("body-scroll"))}))}function scrollNav(){document.querySelectorAll(".navegacion-principal a").forEach(e=>{e.addEventListener("click",(function(e){e.preventDefault();const t=e.target.attributes.href.value;document.querySelector(t).scrollIntoView({behavior:"smooth"})}))})}function crerGaleria(){const e=document.querySelector(".galeria-imagenes");for(let t=1;t<=12;t++){const n=document.createElement("picture");n.innerHTML=`\n                <source srcset="build/img/thumb/${t}.avif" type="image/avif">\n                <source srcset="build/img/thumb/${t}.webp" type="image/webp">\n                <img loading="lazy" width="200" height="300" src="build/img/thumb/${t}.jpg" alt="imagen galeria">\n        `,n.onclick=function(){mostrarImagen(t)},e.appendChild(n)}}function mostrarImagen(e){const t=document.createElement("picture");t.innerHTML=`\n            <source srcset="build/img/grande/${e}.avif" type="image/avif">\n            <source srcset="build/img/grande/${e}.webp" type="image/webp">\n            <img loading="lazy" width="200" height="300" src="build/img/grande/${e}.jpg" alt="imagen galeria">\n    `;const n=document.createElement("DIV");n.appendChild(t),n.classList.add("overlay"),n.onclick=function(){document.querySelector("body").classList.remove("fijar-body"),n.remove()};const i=document.createElement("P");i.textContent="X",i.classList.add("btn-cerrar"),i.onclick=function(){document.querySelector("body").classList.remove("fijar-body"),n.remove()},n.appendChild(i);const o=document.querySelector("body");o.appendChild(n),o.classList.add("fijar-body")}document.addEventListener("DOMContentLoaded",(function(){iniciarApp()}));
-//# sourceMappingURL=app.js.map
+document.addEventListener('DOMContentLoaded', function() {
+    navegacionFija()
+    crearGaleria()
+    resaltarEnlace()
+    scrollNav()
+})
+
+function navegacionFija() {
+    const header = document.querySelector('.header')
+    const sobreFestival = document.querySelector('.sobre-festival')
+
+    document.addEventListener('scroll', function() {
+        if(sobreFestival.getBoundingClientRect().bottom < 1) {
+            header.classList.add('fixed')
+        } else {
+            header.classList.remove('fixed')
+        }
+    })
+}
+
+function crearGaleria() {
+
+    const CANTIDAD_IMAGENES = 16
+    const galeria = document.querySelector('.galeria-imagenes')
+
+    for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
+        const imagen = document.createElement('IMG')
+        imagen.src = `src/img/gallery/full/${i}.jpg`
+        imagen.alt = 'Imagen Galería'
+
+        // Event Handler
+        imagen.onclick = function() {
+            mostrarImagen(i)
+        }
+        
+        galeria.appendChild(imagen)
+    }
+}
+
+function mostrarImagen(i) {
+    const imagen = document.createElement('IMG')
+    imagen.src = `src/img/gallery/full/${i}.jpg`
+    imagen.alt = 'Imagen Galería'
+
+    // Generar Modal
+    const modal = document.createElement('DIV')
+    modal.classList.add('modal')
+    modal.onclick = cerrarModal
+
+    // Botón cerrar modal
+    const cerrarModalBtn = document.createElement('BUTTON')
+    cerrarModalBtn.textContent = 'X'
+    cerrarModalBtn.classList.add('btn-cerrar')
+    cerrarModalBtn.onclick = cerrarModal
+
+    modal.appendChild(imagen)
+    modal.appendChild(cerrarModalBtn)
+
+    // Agregar al HTML
+    const body = document.querySelector('body')
+    body.classList.add('overflow-hidden')
+    body.appendChild(modal)
+
+}
+
+function cerrarModal() {
+
+    const modal = document.querySelector('.modal')
+    modal.classList.add('fade-out')
+
+    setTimeout(() => {
+        modal?.remove()
+
+        const body = document.querySelector('body')
+        body.classList.remove('overflow-hidden')
+    }, 500);
+}
+
+function resaltarEnlace() {
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section')
+        const navLinks = document.querySelectorAll('.navegacion-principal a')
+
+        let actual = '';
+        sections.forEach( section => {
+            const sectionTop = section.offsetTop
+            const sectionHeight = section.clientHeight
+            if(window.scrollY >= (sectionTop - sectionHeight / 3 ) ) {
+                actual = section.id
+            }
+        })
+
+        navLinks.forEach(link => {
+            link.classList.remove('active')
+            if(link.getAttribute('href') === '#' + actual) {
+                link.classList.add('active')
+            }
+        })
+    })
+}
+
+function scrollNav() {
+    const navLinks = document.querySelectorAll('.navegacion-principal a')
+
+    navLinks.forEach( link => {
+        link.addEventListener('click', e => {
+            e.preventDefault()
+            const sectionScroll = e.target.getAttribute('href')
+            const section = document.querySelector(sectionScroll)
+
+            section.scrollIntoView({behavior: 'smooth'})
+        })
+    })
+}

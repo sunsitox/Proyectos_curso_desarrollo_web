@@ -1,56 +1,51 @@
-@use '../base/variables' as v;
-@use '../base/mixins' as m;
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
 
-// Header
 .header {
     background-color: v.$verde;
 
     @include m.tablet {
-        &.fijo {
+        &.fixed {
+            position: fixed;
             left: 0;
             top: 0;
-            position: fixed;
             width: 100%;
-            box-shadow: 0.1rem 0.2rem 0.1rem #333;
-        } 
-    }
-
-    h1 {
-        color: v.$blanco;
-        text-align: center;
-        @include m.tablet {
-            margin: 0;
+            box-shadow: .1rem .2rem .3rem #333;
         }
     }
-    .contnido-header {
+ 
+    
+    .contenido-header {    
         padding: 2rem;
-
         @include m.tablet {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
     }
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+            margin: 0;
+        }
+    }
 }
-
 .navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     @include m.tablet {
-        display: flex;
-        gap: 2rem;
+        flex-direction: row;
     }
     a {
-        display: block;
-        text-align: center;
-        margin-bottom: 1rem;
         color: v.$blanco;
         font-size: 2.4rem;
-        margin-bottom: 1rem;
-        @include m.tablet {
-            margin: 0;
-            
-        }
 
-        &:hover {
+        &:hover,
+        &.active {
             color: v.$amarillo;
         }
     }

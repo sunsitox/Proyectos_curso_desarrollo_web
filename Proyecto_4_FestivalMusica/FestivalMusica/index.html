@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock & EDM Festival</title>
+    <title>Festival De Música</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
     <header class="header">
-        <div class="contenedor contnido-header">
-            <h1>Rock & EDM Festival</h1>
+        <div class="contenedor contenido-header">
+            <h1>Techno & EDM Festival</h1>
 
             <nav class="navegacion-principal">
                 <a href="#lineup">Line Up</a>
@@ -27,203 +25,191 @@
     <div class="video">
         <div class="overlay">
             <div class="contenedor contenido-video">
-                <h2>Rock & EDM Festival</h2>
-                <p>Julio 2024, Santiago, Chile.</p>
+                <h2>Techno & EDM Festival</h2>
+                <p>Julio 2026, CDMX, México</p>
             </div>
         </div>
         <video autoplay muted loop>
-            <source src="video/concierto.mp4" type="video/mp4">
-            <source src="video/concierto.ogg" type="video/ogg">
-            <source src="video/concierto.webm" type="video/webm">
+            <source src="video/dj.mp4" type="video/mp4" />
+            <source src="video/dj.ogv" type="video/ogg" />
+            <source src="video/dj.webm" type="video/webm" />
         </video>
     </div>
 
-    <section class="contenedor sobre-festival">
+    <section class="sobre-festival">
         <div class="imagen">
-            <picture>
-                <source srcset="build/img/imagen_vocalista.avif" type="image/avif">
-                <source srcset="build/img/imagen_vocalista.webp" type="image/webp">
-                <img loading="lazy" width="200" height="300" src="build/img/imagen_vocalista.jpg" alt="imagen vocalista">
-            </picture>
+            <img src="src/img/imagen_dj.jpg" alt="Sobre Festival" />
         </div>
-        
 
         <div class="contenido-festival">
-            <h2>Rock & EDM Festival</h2>
-            <p class="fecha">Julio 2024, Santiago, Chile.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nesciunt facere architecto magni doloremque, recusandae suscipit rerum, vero illo neque debitis ea quo laboriosam unde atque tempore perferendis nihil quas?</p>
+            <h2>Techno & EDM Festival</h2>
+            <p class="fecha">Julio 2026, CDMX, México</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut assumenda ullam facilis sapiente dolore ipsam optio cumque laboriosam animi. Doloribus esse libero, quos facilis voluptatem omnis eligendi magni provident?</p>
         </div>
     </section>
 
     <section id="lineup" class="lineup">
         <h3>Line Up</h3>
-        
+    
         <p class="dia">Viernes 21</p>
-
-        <div class="escenarios-contenedor contenedor">
-            <div class="escenario rock bg-amarillo">
-                <p class="nombre-escenario">Escenario Rock</p>
-
+        <div class="escenarios-contenedor">
+            <div class="escenario bg-amarillo">
+                <p class="nombre-escenario">Techno</p>
+    
                 <ul class="calendario">
                     <li>
-                        24:00 | <span>Metallica</span>
+                        24:00 | <span>Adam Beyer</span>
                     </li>
                     <li>
-                        22:00 | <span>Pearl Jam</span>
+                        22:00 | <span>Carl Cox</span>
                     </li>
                     <li>
-                        20:00 | <span>KoRn</span>
+                        20:00 | <span>HI-LO</span>
                     </li>
                     <li>
-                        19:00 | <span>Muse</span>
+                        19:00 | <span>Amelie Lens</span>
                     </li>
                     <li>
-                        18:00 | <span>Breaking Benjamin</span>
+                        18:00 | <span>CamelPhat</span>
                     </li>
                     <li>
-                        17:00 | <span>30 Seconds to Mars</span>
+                        17:00 | <span>ARTBAT</span>
                     </li>
                 </ul>
             </div> <!--.escenario-->
-
-            <div class="escenario edm bg-verde">
-                <p class="nombre-escenario">Escenario EDM</p>
-
+    
+            <div class="escenario bg-verde">
+                <p class="nombre-escenario">EDM</p>
+    
                 <ul class="calendario">
                     <li>
-                        24:00 | <span>Deadmau5</span>
+                        24:00 | <span>David Guetta</span>
                     </li>
                     <li>
                         22:00 | <span>Tïesto</span>
                     </li>
                     <li>
+                        20:00 | <span>Martin Garrix</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Steve Aoki</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Afrojack</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Vintage Culture</span>
+                    </li>
+                </ul>
+            </div> <!--.escenario-->
+        </div> <!--.escenarios-contenedor -->
+    
+    
+        <p class="dia">Sábado 22</p>
+        <div class="escenarios-contenedor contenedor">
+            <div class="escenario bg-verde">
+                <p class="nombre-escenario">Techno</p>
+    
+                <ul class="calendario">
+                    <li>
+                        24:00 | <span>Reinier Zonneveld</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Eric Prydz</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Deadmau5</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Joris Voorn</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Nina Kraviz</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Argy</span>
+                    </li>
+                </ul>
+            </div> <!--.escenario-->
+    
+            <div class="escenario bg-amarillo">
+                <p class="nombre-escenario">EDM</p>
+    
+                <ul class="calendario">
+                    <li>
+                        24:00 | <span>Armin Van Buuren</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Calvin Harris</span>
+                    </li>
+                    <li>
                         20:00 | <span>Hardwell</span>
                     </li>
                     <li>
-                        19:00 | <span>Dash Berlin</span>
-                    </li>
-                    
-                    <li>
-                        18:00 | <span>Fedde Legrand</span>
+                        19:00 | <span>Above & Beyond</span>
                     </li>
                     <li>
-                        17:00 | <span>Audien</span>
+                        18:00 | <span>Diplo</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Steve Angello</span>
                     </li>
                 </ul>
             </div> <!--.escenario-->
-        </div> <!--.escenarios-contenedor-->
-
-        <p class="dia">Sábado 22</p>
-
-        <div class="escenarios-contenedor contenedor">
-            <div class="escenario rock bg-verde">
-                <p class="nombre-escenario">Escenario Rock</p>
-
-                <ul class="calendario">
-                    <li>
-                        24:00 | <span>Red Hot Chili Peppers</span>
-                    </li>
-                    <li>
-                        22:00 | <span>The Killers</span>
-                    </li>
-                    <li>
-                        20:00 | <span>Deftones</span>
-                    </li>
-                    <li>
-                        19:00 | <span>Limp Bizkit</span>
-                    </li>
-                    
-                    <li>
-                        18:00 | <span>Papa Roach</span>
-                    </li>
-                    <li>
-                        17:00 | <span>Lamb of God</span>
-                    </li>
-                </ul>
-            </div> <!--.escenario-->
-
-            <div class="escenario edm bg-amarillo">
-                <p class="nombre-escenario">Escenario EDM</p>
-
-                <ul class="calendario">
-                    <li>
-                        24:00 | <span>Paul Van Dyk</span>
-                    </li>
-                    <li>
-                        22:00 | <span>Armin Van Buuren</span>
-                    </li>
-                    <li>
-                        20:00 | <span>Above & Beyond</span>
-                    </li>
-                    <li>
-                        19:00 | <span>Eric Prdyz</span>
-                    </li>
-                    
-                    <li>
-                        18:00 | <span>Ferry Corsten</span>
-                    </li>
-                    <li>
-                        17:00 | <span>Vini Vici</span>
-                    </li>
-                </ul>
-            </div> <!--.escenario-->
-        </div> <!--.escenarios-contenedor-->
+        </div> <!--.escenarios-contenedor -->
     </section>
 
-    <section id="galeria" class="galeria contenedor">
+    <section id="galeria" class="galeria">
         <h3>Galería</h3>
 
-        <ul class="galeria-imagenes"></ul>
-
+        <div class="galeria-imagenes"></div>
     </section>
 
-    <section id="boletos" class="boletos bg-verde">
+    <section id="boletos" class="contenedor-boletos">
         <h3>Boletos</h3>
-
-        <div class="contenedor contenedor-boletos">
-            <div class="basico pase">
-                <p class="nombre-pase">Pase 1 Día</p>
+    
+        <div class="boletos">
+            <div class="pase">
+                <p class="pase-nombre">Pase 1 Día</p>
                 <header class="pase-header">
                     <p>Incluye</p>
                 </header>
-
                 <div class="pase-body">
                     <ul>
                         <li>Acceso a ambos escenarios</li>
-                        <li>Comida y Bebida</li>
+                        <li>Bebida Ilimitada</li>
+                        <li>Camisa / Pulsera del Evento</li>
                     </ul>
                 </div>
-
                 <footer class="pase-footer">
                     <p>$100</p>
                 </footer>
             </div>
-            <div class="premium pase">
-                <p class="nombre-pase">Pase 2 Día</p>
+            <div class="pase">
+                <p class="pase-nombre">Pase 2 Días</p>
                 <header class="pase-header">
                     <p>Incluye</p>
                 </header>
-
                 <div class="pase-body">
                     <ul>
                         <li>Acceso a ambos escenarios</li>
-                        <li>Comida y Bebida</li>
-                        <li>Camisa del Evento</li>
+                        <li>Bebida Ilimitada</li>
+                        <li>Camisa / Pulsera del Evento</li>
                         <li>Acceso VIP</li>
                     </ul>
                 </div>
-
                 <footer class="pase-footer">
                     <p>$180</p>
                 </footer>
             </div>
         </div>
     </section>
-
-    <footer class="site-footer">
-        <p>Rock & EDM Festival. Todos los derechos reservados</p>
-    </footer>
     
+    <footer class="footer">
+        <p>Techno & EDM Festival. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="build/js/app.js"></script>
+
 </body>
 </html>
